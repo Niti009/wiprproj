@@ -1,0 +1,39 @@
+#QUESTION 1:
+
+def sort_colors(color_string):
+    color_list = color_string.split('-')
+    color_list.sort()
+    return '-'.join(color_list)
+
+# Sample inputs`=`
+input1 = "green-red-yellow-black-white"
+input2 = "pink-blue-tan-purple"
+
+# Sample outputs
+print("Sorted 1:", sort_colors(input1))
+print("Sorted 2:", sort_colors(input2))
+
+#QUESTION 2:
+
+def isPalindrome(name):
+    return "Yes, it is a palindrome" if name == name[::-1] else "No, it is not a palindrome"
+
+def countVowels(name):
+    return sum(1 for char in name if char in 'aeiouAEIOU')
+
+def frequencyOfLetters(name):
+    freq = {}
+    for ch in name:
+        freq[ch] = freq.get(ch, 0) + 1
+    return freq
+
+username = "Bob"
+
+print(isPalindrome(username))
+
+print("Number of vowels:", countVowels(username))
+
+letter_freq = frequencyOfLetters(username)
+for letter, count in letter_freq.items():
+    print(f"Frequency of letter {letter}: {count}")
+
